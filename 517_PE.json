@@ -1,9 +1,4 @@
 {
-    "x-stoplight": {
-        "docs": {
-            "showModels": false
-        }
-    },
     "swagger": "2.0",
     "info": {
         "version": "v2.0",
@@ -576,7 +571,9 @@
         },
         "/alerts/policies/conflicting_policies": {
             "post": {
-                "tags": [
+		            "summary": "Create alerts for conflicting policies.",
+                "description": "Create alerts for conflicting policies.",
+               "tags": [
                     "/alerts"
                 ],
                 "operationId": "post/alerts/policies/conflicting_policies/getConflictingPolicies",
@@ -1158,6 +1155,8 @@
         },
         "/authconfig/client_auth/ca_chain": {
             "post": {
+		            "summary": "Create client authentication ca chain",
+                "description": "Create client authentication ca chain",
                 "tags": [
                     "/authconfig"
                 ],
@@ -1353,7 +1352,8 @@
         },
         "/authconfig/directories/connection_status": {
             "post": {
-                "summary": "Test LDAP directory connection status",
+                "summary": "Configure connection status for directories",
+                "description": "Configure connection status for directories",
                 "tags": [
                     "/authconfig"
                 ],
@@ -1451,6 +1451,9 @@
         },
         "/authconfig/directory_domains": {
             "get": {
+              "summary": "getDirectoryDomainLis",
+                "description": "getDirectoryDomainLis",
+                
                 "tags": [
                     "/authconfig"
                 ],
@@ -1526,6 +1529,8 @@
         },
         "/cloud/azure/upload_certificate": {
             "post": {
+  		         "summary": "Remove Auth types.",
+                "description": "Remove Auth types from the existing Auth types.",
                 "tags": [
                     "/cloud"
                 ],
@@ -1952,6 +1957,8 @@
         },
         "/cloud/{cloud_type}/regions": {
             "get": {
+               "summary": "Get a list of CVM images.",
+                "description": "Get a list of CVM images that can be installed.",
                 "tags": [
                     "/cloud"
                 ],
@@ -3146,7 +3153,7 @@
         "/cluster/stats": {
             "get": {
                 "summary": "Get the list of Cluster stats.",
-                "description": "Get the stats for the specified metrics. If start time and end time are included in the query string, then historical stats are retrieved. Otherwise, the latest statsare retrieved.",
+                "description": "Get the stats for the specified metrics. If start time and end time are included in the query string, then historical stats are retrieved. Otherwise, the latest stats are retrieved.",
                 "tags": [
                     "/cluster"
                 ],
@@ -3286,6 +3293,8 @@
         "/clusters/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on any Cluster.",
+               "description": "Get the list of alerts generated on any Cluster.",
+                
                 "tags": [
                     "/clusters"
                 ],
@@ -3369,8 +3378,11 @@
             }
         },
         "/clusters/events": {
+          
             "get": {
                 "summary": "Get the list of events generated on any Cluster.",
+                
+                "description": "Get the list of events generated on any Cluster.",
                 "tags": [
                     "/clusters"
                 ],
@@ -3475,6 +3487,7 @@
         "/clusters/{id}/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on a specified Cluster.",
+                 "description": "Get the list of alerts generated on a specified Cluster.",
                 "tags": [
                     "/clusters"
                 ],
@@ -3567,6 +3580,7 @@
         "/clusters/{id}/events": {
             "get": {
                 "summary": "Get the list of events generated on a specified Cluster.",
+                   "description": "Get the list of events generated on a specified Cluster.",
                 "tags": [
                     "/clusters"
                 ],
@@ -3927,6 +3941,8 @@
         },
         "/data_at_rest_encryption/software/rekey": {
             "post": {
+               "summary": "data_at_rest_encryption/software/rekey.",
+                "description": "data_at_rest_encryption/software/rekey",
                 "tags": [
                     "/data_at_rest_encryption"
                 ],
@@ -4464,6 +4480,7 @@
         "/disks/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on any Disk.",
+                "description": "Get the list of alerts generated on any Disk.",
                 "tags": [
                     "/disks"
                 ],
@@ -4549,6 +4566,7 @@
         "/disks/events": {
             "get": {
                 "summary": "Get the list of events generated on any Disk.",
+                "description": "Get the list of events generated on any Disk.",
                 "tags": [
                     "/disks"
                 ],
@@ -4698,6 +4716,7 @@
         "/disks/{uuid}/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on a specified Disk.",
+                "description": "Get the list of alerts generated on a specified Disk.",
                 "tags": [
                     "/disks"
                 ],
@@ -4790,6 +4809,7 @@
         "/disks/{uuid}/events": {
             "get": {
                 "summary": "Get the list of events generated on a specified Disk.",
+                 "description":"Get the list of events generated on a specified Disk",
                 "tags": [
                     "/disks"
                 ],
@@ -5190,6 +5210,8 @@
         },
         "/flr/{vm_uuid}/attach_disk": {
             "post": {
+               "summary": "Attach disk for a particular vm uuid",
+                "description": "Attach disk for a particular vm uuid",
                 "tags": [
                     "/flr"
                 ],
@@ -5230,6 +5252,8 @@
         },
         "/flr/{vm_uuid}/attached_disks": {
             "get": {
+              "summary" : "Get Details of the VM disks",
+               "description":"Get Details of the VM disks",
                 "tags": [
                     "/flr"
                 ],
@@ -5264,6 +5288,8 @@
         },
         "/flr/{vm_uuid}/attached_disks/{snapshot_id}": {
             "get": {
+              "summary" : "Get Details of the attached disks",
+               "description":"Get Details of the attached disks",
                 "tags": [
                     "/flr"
                 ],
@@ -5306,6 +5332,8 @@
         },
         "/flr/{vm_uuid}/detach_disk": {
             "post": {
+               "summary": "Deattach disk for a particular vm uuid",
+                "description": "Deattach disk for a particular vm uuid",
                 "tags": [
                     "/flr"
                 ],
@@ -5346,6 +5374,8 @@
         },
         "/flr/{vm_uuid}/snapshots": {
             "get": {
+              "summary" : "Get Details of the VM snaphots",
+               "description":"Get Details of the VM snaphots",
                 "tags": [
                     "/flr"
                 ],
@@ -5389,6 +5419,7 @@
         "/ha": {
             "get": {
                 "summary": "Get current HA configuration.",
+                "description":"Get current HA configuration.",
                 "tags": [
                     "/ha"
                 ],
@@ -5411,6 +5442,7 @@
             },
             "put": {
                 "summary": "Enable, disable or modify HA configuration.",
+                 "description":"Enable, disable or modify HA configuration.",
                 "tags": [
                     "/ha"
                 ],
@@ -5688,6 +5720,8 @@
                 }
             },
             "put": {
+               "summary": "Edit Host",
+                "description": "Edit Host",
                 "tags": [
                     "/hosts"
                 ],
@@ -5721,6 +5755,7 @@
         "/hosts/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on any Host.",
+                "description":"Get the list of alerts generated on any Host.",
                 "tags": [
                     "/hosts"
                 ],
@@ -5806,6 +5841,7 @@
         "/hosts/events": {
             "get": {
                 "summary": "Get the list of events generated on any Host.",
+                "description":"Get the list of events generated on any Host.",
                 "tags": [
                     "/hosts"
                 ],
@@ -5869,6 +5905,8 @@
         },
         "/hosts/failover_cluster": {
             "post": {
+                  "summary": "Configure failover for a cluster for a host",
+                "description": "Configure failover for a cluster for a host",
                 "tags": [
                     "/hosts"
                 ],
@@ -5899,6 +5937,9 @@
                 }
             },
             "get": {
+                "summary": "Get details of failover clusters",
+                "description":"Get details of failover clusters",
+               
                 "tags": [
                     "/hosts"
                 ],
@@ -6005,6 +6046,8 @@
         },
         "/hosts/join_domain": {
             "post": {
+                "summary": "Request to join nodes to a domain",
+                "description": "Request to join nodes to a domain",
                 "tags": [
                     "/hosts"
                 ],
@@ -6037,6 +6080,8 @@
         },
         "/hosts/restart": {
             "post": {
+               "summary": "Request to restart nodes",
+                "description": "Request to restart nodes",
                 "tags": [
                     "/hosts"
                 ],
@@ -6069,6 +6114,8 @@
         },
         "/hosts/set_default_vm_vhd_location": {
             "post": {
+               "summary": "Request to set default vhd location for a VM",
+                "description": "Request to set default vhd location for a VM",
                 "tags": [
                     "/hosts"
                 ],
@@ -6101,6 +6148,8 @@
         },
         "/hosts/unjoin_domain": {
             "post": {
+                 "summary": "Request to unjoin nodes from a domain",
+                "description": "Request to unjoin nodes from a domain",
                 "tags": [
                     "/hosts"
                 ],
@@ -6171,6 +6220,8 @@
                 }
             },
             "delete": {
+               "summary": "Delete a host detail",
+                "description": "Delete a host detail",
                 "tags": [
                     "/hosts"
                 ],
@@ -6226,6 +6277,7 @@
         "/hosts/{uuid}/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on a specified Host.",
+                "description": "Get the list of alerts generated on a specified Host.",
                 "tags": [
                     "/hosts"
                 ],
@@ -6317,6 +6369,9 @@
         },
         "/hosts/{uuid}/detach_node_from_metadata_store": {
             "post": {
+               "summary": "Detach node from metadata store",
+                "description": "Detach node from metadata store",
+              
                 "tags": [
                     "/hosts"
                 ],
@@ -6347,6 +6402,9 @@
         },
         "/hosts/{uuid}/enable_metadata_store": {
             "post": {
+              "summary": "Enable metadata store",
+                "description": "Enable metadata store",
+              
                 "tags": [
                     "/hosts"
                 ],
@@ -6377,6 +6435,9 @@
         },
         "/hosts/{uuid}/enable_monitoring": {
             "post": {
+              "summary": "Enable monitoring for a Host with a specified UUID",
+                "description": "Enable monitoring for a Host with a specified UUID",
+              
                 "tags": [
                     "/hosts"
                 ],
@@ -6458,6 +6519,7 @@
         "/hosts/{uuid}/events": {
             "get": {
                 "summary": "Get the list of events generated on a specified Host.",
+                "description": "Get the list of events generated on a specified Host.",
                 "tags": [
                     "/hosts"
                 ],
@@ -6746,6 +6808,8 @@
         },
         "/hosts/{uuid}/host_nics": {
             "get": {
+              "summary" :" Get host nics for a specified uuid",
+              "description" :"Get host nics for a specified uuid",
                 "tags": [
                     "/hosts"
                 ],
@@ -6787,6 +6851,8 @@
         },
         "/hosts/{uuid}/host_nics/{pnic_id}": {
             "get": {
+                "summary" :" Get host interface",
+              "description" :" Get host interface",
                 "tags": [
                     "/hosts"
                 ],
@@ -6825,6 +6891,8 @@
         },
         "/hosts/{uuid}/host_nics/{pnic_id}/stats": {
             "get": {
+              "summary" :" Get stats for a host nics with a specified uuid",
+              "description" :" Get stats for a host nics with a specified uuid",
                 "tags": [
                     "/hosts"
                 ],
@@ -6964,6 +7032,8 @@
         },
         "/hosts/{uuid}/virtual_nics": {
             "get": {
+               "summary" :" Get virtual_nics for a specified uuid",
+              "description" :"Get virtual_nics for a specified uuid",
                 "tags": [
                     "/hosts"
                 ],
@@ -7005,6 +7075,8 @@
         },
         "/hosts/{uuid}/virtual_nics/{vnic_id}": {
             "get": {
+              "summary" :" Get details of virtual_nics for a specified uuid",
+              "description" :"Get details of virtual_nics for a specified uuid",
                 "tags": [
                     "/hosts"
                 ],
@@ -7043,6 +7115,8 @@
         },
         "/hosts/{uuid}/virtual_nics/{vnic_id}/stats": {
             "get": {
+               "summary" :" Get stats for virtual_nics with a specified uuid",
+              "description" :"Get stats for virtual_nics with a specified uuid",
                 "tags": [
                     "/hosts"
                 ],
@@ -7503,6 +7577,7 @@
         "/iscsi_clients": {
             "get": {
                 "summary": "Retrieve Iscsi Client configuration",
+               "description" :  "Retrieve Iscsi Client configuration",
                 "tags": [
                     "/iscsi_clients"
                 ],
@@ -7526,7 +7601,8 @@
         },
         "/iscsi_clients/{uuid}": {
             "get": {
-                "summary": "Retrieve Iscsi Client configuration",
+                "summary": "Retrieve Iscsi Client configuration with a particular uuid",
+                 "description" :  "Retrieve Iscsi Client configuration with a particular uuid",
                 "tags": [
                     "/iscsi_clients"
                 ],
@@ -7557,6 +7633,7 @@
             },
             "put": {
                 "summary": "Modify an existing Iscsi Client configuration",
+                "description" :  "Modify an existing Iscsi Client configuration",
                 "tags": [
                     "/iscsi_clients"
                 ],
@@ -8277,6 +8354,7 @@
         "/protection_domains/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on any Protection Domain.",
+               "description" : "Get the list of alerts generated on any Protection Domain.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -8470,6 +8548,7 @@
         "/protection_domains/events": {
             "get": {
                 "summary": "Get the list of events generated on any Protection Domain.",
+               "description": "Get the list of events generated on any Protection Domain.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -8707,6 +8786,7 @@
         "/protection_domains/status": {
             "get": {
                 "summary": "Get the Data Protection status for all Protection Domains.",
+                "description": "Get the Data Protection status for all Protection Domains.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -8947,6 +9027,8 @@
         },
         "/protection_domains/{name}/add_entities": {
             "post": {
+                "summary": "Request to add entities to protection domain",
+                "description": "Request to add entities to protection domain",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -8986,6 +9068,7 @@
         "/protection_domains/{name}/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on a specified Protection Domain.",
+                  "description": "Get the list of alerts generated on a specified Protection Domain.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -9216,6 +9299,8 @@
         },
         "/protection_domains/{name}/dr_snapshots/remove_list": {
             "post": {
+                "summary": "Remove snapshot from the protection domain",
+                "description": "Remove snapshot from the protection domain",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -9257,6 +9342,8 @@
         },
         "/protection_domains/{name}/dr_snapshots/retain_list": {
             "post": {
+                 "summary": "Retain snapshot from the protection domain",
+                "description": "Retain snapshot from the protection domain",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -9299,6 +9386,7 @@
         "/protection_domains/{name}/events": {
             "get": {
                 "summary": "Get the list of events generated on a specified Protection Domain.",
+                "description": "Get the list of events generated on a specified Protection Domain.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -9418,6 +9506,8 @@
         },
         "/protection_domains/{name}/min_snapshots": {
             "put": {
+               "summary": "Update Minimum Snapshot for a protection domain",
+                "description": "Update Minimum Snapshot for a protection domain",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -9535,6 +9625,8 @@
         },
         "/protection_domains/{name}/oob_schedules/remove_list": {
             "post": {
+                "summary": "Remove Out-of-Band schedules in a Protection Domain.",
+                "description": "Remove Out-Of-Band schedules in a Protection Domain with the specified name.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -9746,6 +9838,8 @@
         },
         "/protection_domains/{name}/remove_entities": {
             "post": {
+                "summary": "Remove entities from a Protection Domain.",
+                "description": "Remove entities from a Protection Domain.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -9785,6 +9879,7 @@
         "/protection_domains/{name}/replications": {
             "get": {
                 "summary": "Get list of replications in a Protection Domain.",
+                "description": "Get list of replications in a Protection Domain.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -9987,6 +10082,8 @@
         },
         "/protection_domains/{name}/schedules/add_list": {
             "post": {
+               "summary": "Add Cron Schedules for a Protection Domain.",
+                "description": "Add Cron Schedules for a Protection Domain.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -10031,6 +10128,8 @@
         },
         "/protection_domains/{name}/schedules/remove_list": {
             "post": {
+               "summary": "Remove Cron Schedules for a Protection Domain.",
+                "description": "Remove Cron Schedules for a Protection Domain.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -10072,6 +10171,8 @@
         },
         "/protection_domains/{name}/schedules/resume": {
             "put": {
+             "summary": "Resume Cron schedules for a protection domain",
+             "description": "Resume Cron schedules for a protection domain",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -10103,6 +10204,8 @@
         },
         "/protection_domains/{name}/schedules/suspend": {
             "put": {
+              "summary":"Suspend Cron schedules for a protection domain",
+              "description":"Suspend Cron schedules for a protection domain",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -10232,6 +10335,8 @@
         },
         "/protection_domains/{name}/sra_state": {
             "get": {
+              "summary":"Get sra state of a Protection Domain.",
+               "description": "Get sra state of a Protection Domain.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -10260,6 +10365,8 @@
                 }
             },
             "put": {
+               "summary":"Update Protection Domain state with sra state",
+               "description": "Update Protection Domain state with sra state",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -10365,6 +10472,8 @@
         },
         "/protection_domains/{name}/track_oob_schedule/{id}": {
             "get": {
+              "summary":"trackReplicationForOobSchedule",
+               "description": "trackReplicationForOobSchedule",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -10403,6 +10512,7 @@
         "/protection_domains/{name}/unprotect_vms": {
             "post": {
                 "summary": "Remove Virtual Machines from a Protection Domain.",
+                "description": "Remove Virtual Machines from a Protection Domain.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -10446,6 +10556,9 @@
         },
         "/protection_domains/{name}/validate_migrate": {
             "post": {
+              "summary": "Validate Protection domain Migration.",
+                "description": "Validate Protection domain Migration.",
+               
                 "tags": [
                     "/protection_domains"
                 ],
@@ -10953,7 +11066,7 @@
             },
             "delete": {
                 "summary": "Clear retention policies of a snapshot schedule of a Protection Domain.",
-                "description": "Clear retention policies of specified snapshot scheudule from the specified Protection Domain.",
+                "description": "Clear retention policies of specified snapshot schedule from the specified Protection Domain.",
                 "tags": [
                     "/protection_domains"
                 ],
@@ -11344,6 +11457,7 @@
         "/remote_sites/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on any Remote Site.",
+                "description": "Get the list of alerts generated on any Remote Site.",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -11487,6 +11601,7 @@
         "/remote_sites/events": {
             "get": {
                 "summary": "Get the list of events generated on any Remote Site.",
+                "description": "Get the list of events generated on any Remote Site.",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -11550,6 +11665,8 @@
         },
         "/remote_sites/networks": {
             "get": {
+                 "summary": "Get network details for remote sites",
+                "description": "Get network details for remote sites",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -11630,6 +11747,8 @@
         },
         "/remote_sites/policies/{policy_uuid}": {
             "delete": {
+              "summary": "Delete a particular policy for remote sites",
+              "description": "Delete policy with a particular uuid for remote sites",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -11732,6 +11851,8 @@
         },
         "/remote_sites/{name}/add_remote_ip": {
             "post": {
+                "summary": "Add Remote IP for remote sites.",
+                "description": "Add Remote IP for remote sites.",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -11771,6 +11892,7 @@
         "/remote_sites/{name}/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on a specified Remote Site.",
+                "description": "Get the list of alerts generated on a specified Remote Site.",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -11865,6 +11987,8 @@
         },
         "/remote_sites/{name}/compression": {
             "post": {
+               "summary": "Enable compression for remote sites.",
+                "description": "Enable compression for remote sites.",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -11903,6 +12027,8 @@
         },
         "/remote_sites/{name}/connection_status": {
             "get": {
+               "summary": "Get connection status for the remote sites",
+                "description": "Get connection status for the remote sites",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -11995,6 +12121,8 @@
         },
         "/remote_sites/{name}/dr_snapshots/download_snapshot": {
             "post": {
+               "summary": "Download snapshot compression for remote sites.",
+                "description": "Enable compression for remote sites.",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -12033,6 +12161,8 @@
         },
         "/remote_sites/{name}/dr_snapshots/remove_list": {
             "post": {
+                "summary": "Remove snapshot  for remote sites.",
+                "description": "Remove snapshot  for remote sites.",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -12072,6 +12202,7 @@
         "/remote_sites/{name}/events": {
             "get": {
                 "summary": "Get the list of events generated on a specified Remote Site.",
+                 "description": "Get the list of events generated on a specified Remote Site.",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -12142,6 +12273,8 @@
         },
         "/remote_sites/{name}/map_vstore": {
             "post": {
+                "summary": "Map vstore for a specified remote site",
+                "description": "Map vstore for a specified remote site",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -12180,6 +12313,8 @@
         },
         "/remote_sites/{name}/max_bandwidth": {
             "post": {
+               "summary": "Set Maximum bandwidth for a specified remote site",
+                "description": "Set Maximum bandwidth for a specified remote site",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -12264,6 +12399,8 @@
         },
         "/remote_sites/{name}/proxy": {
             "post": {
+               "summary": "Enable proxy for a specified remote site",
+               "description": "Enable proxy for a specified remote site",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -12302,6 +12439,9 @@
         },
         "/remote_sites/{name}/remove_remote_ip": {
             "post": {
+              
+                  "summary": "Remove remote IP for a specified remote site",
+                  "description": "Remove remote IP for a specified remote site",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -12407,6 +12547,8 @@
         },
         "/remote_sites/{name}/unmap_vstore": {
             "post": {
+              "summary": "UnMap vStores for a specified remote site",
+               "description": "UnMap vStores for a specified remote site",
                 "tags": [
                     "/remote_sites"
                 ],
@@ -12584,7 +12726,7 @@
         "/snapshots/{uuid}/clone": {
             "post": {
                 "summary": "Clone a Snapshot.",
-                "description": "Clone a Snapshot. <br/><br/>If a UUID is specified for the cloned snapshot, then the operation will be idempotent. <br/><br/>If overrideNetworkConfig is set to true in the clone spec, then the source snapshot's network configuration is overridden by one specified in the nic list. If false, the clone will inherit its basic network configuration from the source, minus MAC and IP address. <br/><br/>This is also an asynchronous operation that results in the creation of a task object.This is also an asynchronous operation that results in the creation of a task object. The UUID of this task object is returned as the response of this operation. This task can be monitored by using the /tasks/poll API.",
+                "description": "Clone a Snapshot. <br/><br/>If a UUID is specified for the cloned snapshot, then the operation will be idempotent. <br/><br/>If overrideNetworkConfig is set to true in the clone spec, then the source snapshot's network configuration is overridden by one specified in the nic list. If false, the clone will inherit its basic network configuration from the source, minus MAC and IP address. <br/><br/>This is also an asynchronous operation that results in the creation of a task object. This is also an asynchronous operation that results in the creation of a task object. The UUID of this task object is returned as the response of this operation. This task can be monitored by using the /tasks/poll API.",
                 "tags": [
                     "/snapshots"
                 ],
@@ -13374,6 +13516,7 @@
         "/storage_containers/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on any Storage Container.",
+                "description": "Get the list of alerts generated on any Storage Container.",
                 "tags": [
                     "/storage_containers"
                 ],
@@ -13557,6 +13700,7 @@
         "/storage_containers/events": {
             "get": {
                 "summary": "Get the list of events generated on any Storage Container.",
+                "description": "Get the list of events generated on any Storage Container.",
                 "tags": [
                     "/storage_containers"
                 ],
@@ -13699,6 +13843,7 @@
         "/storage_containers/{uuid}/alerts": {
             "get": {
                 "summary": "Get the list of alerts generated on a specified Storage Container.",
+                "description": "Get the list of alerts generated on a specified Storage Container.",
                 "tags": [
                     "/storage_containers"
                 ],
@@ -13791,6 +13936,7 @@
         "/storage_containers/{uuid}/events": {
             "get": {
                 "summary": "Get the list of events generated on a specified Container.",
+                 "description": "Get the list of events generated on a specified Container.",
                 "tags": [
                     "/storage_containers"
                 ],
@@ -14116,6 +14262,8 @@
         },
         "/upgrade/hypervisor_installer/softwares": {
             "post": {
+                "summary": "Upgrade Hypervisor with a hypervisor installer",
+               "description": "Upgrade Hypervisor with a hypervisor installer",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14154,6 +14302,8 @@
         },
         "/upgrade/validate_compatibility/{type}/{version}": {
             "get": {
+               "summary": "Validate container details ",
+                "description": "Validate container details ",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14190,6 +14340,8 @@
         },
         "/upgrade/{type}/configuration": {
             "get": {
+              "summary": "Get upgrade configuration ",
+                "description": "Get upgrade configuration",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14218,6 +14370,8 @@
                 }
             },
             "put": {
+               "summary": "editUpgradeConfiguration ",
+                "description": "editUpgradeConfiguration",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14256,6 +14410,8 @@
         },
         "/upgrade/{type}/metadata": {
             "post": {
+                "summary": "uploadMetadata ",
+                "description": "uploadMetadata",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14294,6 +14450,8 @@
         },
         "/upgrade/{type}/softwares": {
             "get": {
+                 "summary": "getSoftwares ",
+                "description": "getSoftwares",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14330,6 +14488,9 @@
         },
         "/upgrade/{type}/softwares/download": {
             "post": {
+              
+                "summary": "downloadSoftwareFromMetadata ",
+                "description": "downloadSoftwareFromMetadata",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14366,6 +14527,8 @@
         },
         "/upgrade/{type}/softwares/validate_upload": {
             "post": {
+              "summary": "validateSoftwareMetadata ",
+              "description": "validateSoftwareMetadata",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14404,6 +14567,8 @@
         },
         "/upgrade/{type}/softwares/{name}": {
             "get": {
+               "summary": "{name}/getSoftware ",
+              "description": "{name}/getSoftware",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14438,6 +14603,8 @@
                 }
             },
             "delete": {
+                "summary": "/deleteSoftware ",
+              "description": "/deleteSoftware",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14474,6 +14641,8 @@
         },
         "/upgrade/{type}/softwares/{name}/cancel_transfer": {
             "post": {
+              "summary": "Cancel Software Transfer ",
+              "description": "Cancel Software Transfer",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14510,6 +14679,8 @@
         },
         "/upgrade/{type}/softwares/{name}/download": {
             "post": {
+                "summary": "Download software for upgrading software version ",
+                "description": "Download software for upgrading software version ",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14546,6 +14717,8 @@
         },
         "/upgrade/{type}/softwares/{name}/upload": {
             "post": {
+               "summary": "Upload software for upgrading software version ",
+                "description": "Upload software for upgrading software version ",
                 "tags": [
                     "/upgrade"
                 ],
@@ -14749,6 +14922,7 @@
             },
             "put": {
                 "summary": "Update virtual Disk.",
+                "description": "Update virtual Disk.",
                 "tags": [
                     "/virtual_disks"
                 ],
@@ -15267,6 +15441,8 @@
         },
         "/vms/{uuid}/disks/update": {
             "put": {
+              "summary": "Update Disk for VMs",
+              "description": "Update Disk for VMs.",
                 "tags": [
                     "/vms"
                 ],
@@ -15479,7 +15655,7 @@
         "/vms/{uuid}/restore": {
             "post": {
                 "summary": "Restore a Virtual Machine to a snapshotted state.",
-                "description": "Restore a Virtual Machine to a snapshotted state. <br/><br/>If the VM is currently running, it will be powered off. Since Virtual Machine snapshots do not include the Virtual Machine memory image, the Virtual Machine will remain powered off after the restore is complete. <br/><br/>A Virtual Machine snapshot may no longer be compatible with the current virtual network configuration. In this case, the user may choose not to restore the Virtual Machine's network adpaters using the restoreNetworkConfig keyword argument. <br/><br/> This is also an asynchronous operation that results in the creation of a task object. The UUID of this task object is returned as the response of this operation. This task can be monitored by using the /tasks/poll API.",
+                "description": "Restore a Virtual Machine to a snapshotted state. <br/><br/>If the VM is currently running, it will be powered off. Since Virtual Machine snapshots do not include the Virtual Machine memory image, the Virtual Machine will remain powered off after the restore is complete. <br/><br/>A Virtual Machine snapshot may no longer be compatible with the current virtual network configuration. In this case, the user may choose not to restore the Virtual Machine's network adapters using the restoreNetworkConfig keyword argument. <br/><br/> This is also an asynchronous operation that results in the creation of a task object. The UUID of this task object is returned as the response of this operation. This task can be monitored by using the /tasks/poll API.",
                 "tags": [
                     "/vms"
                 ],
@@ -15656,6 +15832,7 @@
         "/volume_groups": {
             "post": {
                 "summary": "Create a new Volume Group configuration",
+                "description": "Create a new Volume Group configuration",
                 "tags": [
                     "/volume_groups"
                 ],
@@ -15688,6 +15865,7 @@
             },
             "get": {
                 "summary": "Retrieve Volume Group configuration",
+                 "description": "Retrieve Volume Group configuration",
                 "tags": [
                     "/volume_groups"
                 ],
@@ -15727,6 +15905,8 @@
         "/volume_groups/health_check_summary": {
             "get": {
                 "summary": "Get the health check summary for the Volume Groups.",
+                 "description": "Get the health check summary for the Volume Groups.",
+                
                 "tags": [
                     "/volume_groups"
                 ],
@@ -15769,6 +15949,7 @@
         "/volume_groups/{uuid}": {
             "get": {
                 "summary": "Retrieve Volume Group configuration",
+                "description": "Retrieve Volume Group configuration",
                 "tags": [
                     "/volume_groups"
                 ],
@@ -15813,6 +15994,7 @@
             },
             "delete": {
                 "summary": "Remove an existing Volume Group configuration",
+                 "description": "Remove an existing Volume Group configuration",
                 "tags": [
                     "/volume_groups"
                 ],
@@ -15851,6 +16033,7 @@
             },
             "put": {
                 "summary": "Modify an existing Volume Group configuration",
+                "description": "Modify an existing Volume Group configuration",
                 "tags": [
                     "/volume_groups"
                 ],
@@ -15892,6 +16075,7 @@
         "/volume_groups/{uuid}/attach": {
             "post": {
                 "summary": "Attach Volume Group to Virtual Machine.",
+                "description": "Attach Volume Group to Virtual Machine.",
                 "tags": [
                     "/volume_groups"
                 ],
@@ -15933,6 +16117,7 @@
         "/volume_groups/{uuid}/clone": {
             "post": {
                 "summary": "Clone a new Volume Group",
+                "description": "Clone a new Volume Group",
                 "tags": [
                     "/volume_groups"
                 ],
@@ -15974,6 +16159,7 @@
         "/volume_groups/{uuid}/close": {
             "post": {
                 "summary": "Close Volume Group for iSCSI initiators",
+                "description": "Close Volume Group for iSCSI initiators",
                 "tags": [
                     "/volume_groups"
                 ],
@@ -16015,6 +16201,7 @@
         "/volume_groups/{uuid}/detach": {
             "post": {
                 "summary": "Detach Volume Group to Virtual Machine.",
+                "description": "Detach Volume Group to Virtual Machine.",
                 "tags": [
                     "/volume_groups"
                 ],
@@ -16187,6 +16374,7 @@
         "/volume_groups/{uuid}/open": {
             "post": {
                 "summary": "Open Volume Group for iSCSI initiators",
+                "description": "Open Volume Group for iSCSI initiators",
                 "tags": [
                     "/volume_groups"
                 ],
